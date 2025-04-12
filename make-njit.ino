@@ -1,9 +1,7 @@
 #include <WiFi.h>
 #include "esp_http_server.h"
-#include "esp_timer.h"
+#include "esp_camera.h"
 
-#define CAMERA_MODEL_XIAO_ESP32S3
-#include "camera_pins.h"
 #include "camera_config.h"
 #include "handlers.h"
 
