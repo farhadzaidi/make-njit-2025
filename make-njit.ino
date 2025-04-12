@@ -4,9 +4,7 @@
 
 #include "camera_config.h"
 #include "handlers.h"
-
-#define WIFI_SSID "MakeNJIT"
-#define WIFI_PASSWORD "makenjit25"
+#include "wifi_info.h"
 
 // Start the web server and register endpoints
 static esp_err_t startCameraServer() {
