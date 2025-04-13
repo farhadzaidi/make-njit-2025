@@ -21,13 +21,13 @@ static esp_err_t start_server() {
     };
     httpd_register_uri_handler(server, &stream_uri);
 
-    // httpd_uri_t move_uri = {
-    //   .uri       = "/move",
-    //   .method    = HTTP_GET,
-    //   .handler   = move_handler,
-    //   .user_ctx  = NULL
-    // };
-    // httpd_register_uri_handler(server, &move_uri);
+    httpd_uri_t move_uri = {
+      .uri       = "/move",
+      .method    = HTTP_GET,
+      .handler   = move_handler,
+      .user_ctx  = NULL
+    };
+    httpd_register_uri_handler(server, &move_uri);
 
     httpd_uri_t test_uri = {
       .uri       = "/test",
