@@ -37,13 +37,21 @@ static esp_err_t start_server() {
     };
     httpd_register_uri_handler(server, &test_uri);
 
-    httpd_uri_t options_uri = {
-      .uri       = "/*",
+    // httpd_uri_t options_uri = {
+    //   .uri       = "/*",
+    //   .method    = HTTP_OPTIONS,
+    //   .handler   = options_handler,
+    //   .user_ctx  = NULL
+    // };
+    // httpd_register_uri_handler(server, &options_uri);
+    // Explicit OPTIONS handler for /test endpoint
+    httpd_uri_t test_options_uri = {
+      .uri       = "/test",
       .method    = HTTP_OPTIONS,
-      .handler   = options_handler,
+      .handler   = options_handler,  // Reuse the options_handler you've defined
       .user_ctx  = NULL
     };
-    httpd_register_uri_handler(server, &options_uri);
+    httpd_register_uri_handler(server, &test_options_uri);
 
     return ESP_OK;
   }

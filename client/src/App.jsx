@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       {/* <PathGrid /> */}
-      <LiveStream esp32_ip={esp32_ip} />
+      {/* <LiveStream esp32_ip={esp32_ip} /> */}
       <Move esp32_ip={esp32_ip} />
     </div>
   )

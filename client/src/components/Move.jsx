@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 
 const Move = ({ esp32_ip }) => {
   const sendMoveSignal = (action) => {
-    fetch(`http://${esp32_ip}/move?action=${action}`)
+    // fetch(`http://${esp32_ip}/move?action=${action}`)
+    fetch(`http://${esp32_ip}/test`)
       .then((response) => response.text())
       .then((data) => {
         console.log("Success message from ESP:", data);

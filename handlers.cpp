@@ -6,6 +6,7 @@
 
 // Use this endpoint to stream frames using MJPEG
 esp_err_t stream_handler(httpd_req_t *req) {
+  httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
   // Stream response definitions
   static const char *STREAM_CONTENT_TYPE = "multipart/x-mixed-replace;boundary=frame";
   static const char *STREAM_BOUNDARY = "\r\n--frame\r\n";
@@ -110,6 +111,9 @@ esp_err_t options_handler(httpd_req_t *req) {
   httpd_resp_send(req, NULL, 0);
   return ESP_OK;
 }
+
+
+
 
 
 
