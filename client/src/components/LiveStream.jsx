@@ -1,8 +1,7 @@
-function LiveStream() {
-  const ESP32_IP = "172.20.10.13";
+function LiveStream({ esp32_ip }) {
 
   return (
-    <img src={`http://${ESP32_IP}/stream`} alt="Live Stream" width="300" />
+    <img src={`http://${esp32_ip}/stream`} alt="Live Stream" width="300" />
   );
 
 }
